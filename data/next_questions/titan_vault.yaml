@@ -1,0 +1,119 @@
+scene:
+  calm:
+    foreshadow:
+      - {weight: 3, text: "What small detail hints the Titan is not entirely inert?"}
+      - {weight: 2, text: "What ritual behavior makes the Vault feel inhabited?"}
+  uneasy:
+    pressure:
+      - {weight: 3, text: "What sign suggests containment is lagging behind events?"}
+  pressured:
+    consequence:
+      - {weight: 3, text: "What immediate cost follows if they push forward now?"}
+  dangerous:
+    sacrifice:
+      - {weight: 3, text: "What must be abandoned to keep momentum?"}
+  critical:
+    irreversible:
+      - {weight: 4, text: "What becomes irreversible if they hesitate right now?"}
+
+gate:
+  calm:
+    clue:
+      - {weight: 2, text: "Which harmless clue points to this gate's true mechanism?"}
+  uneasy:
+    compromise:
+      - {weight: 2, text: "What compromise opens the gate but shifts danger elsewhere?"}
+  pressured:
+    urgency:
+      - {weight: 3, text: "What countdown makes this gate impossible to ignore?"}
+  dangerous:
+    collateral:
+      - {weight: 3, text: "If they force it, who pays the collateral cost?"}
+  critical:
+    final_lock:
+      - {weight: 4, text: "What last lock can only be solved by choosing a side?"}
+
+discoverable:
+  calm:
+    interpretation:
+      - {weight: 2, text: "Who interprets this clue incorrectly, and why?"}
+  uneasy:
+    contradiction:
+      - {weight: 2, text: "What nearby evidence contradicts the obvious reading?"}
+  pressured:
+    leverage:
+      - {weight: 3, text: "How could a faction weaponize this truth immediately?"}
+  dangerous:
+    revelation:
+      - {weight: 3, text: "What hidden connection does this reveal between zones?"}
+  critical:
+    burden:
+      - {weight: 4, text: "Who must carry this truth and what burden comes with it?"}
+
+expedition:
+  calm:
+    route:
+      - {weight: 2, text: "What route looks safe but is strategically poor?"}
+  uneasy:
+    logistics:
+      - {weight: 2, text: "What resource starts running short first?"}
+  pressured:
+    split:
+      - {weight: 3, text: "What objective tempts the group to split up?"}
+  dangerous:
+    retreat:
+      - {weight: 3, text: "What would a smart retreat preserve right now?"}
+  critical:
+    ultimatum:
+      - {weight: 4, text: "What ultimatum does the Vault impose before the next step?"}
+
+wandering_event:
+  calm:
+    texture:
+      - {weight: 2, text: "What sensory detail makes this event distinct from prior rooms?"}
+  uneasy:
+    intent:
+      - {weight: 2, text: "What does this event seem to want from the party?"}
+  pressured:
+    escalation:
+      - {weight: 3, text: "What escalation happens if this goes unresolved?"}
+  dangerous:
+    stakes:
+      - {weight: 3, text: "What personal stake pulls one PC into this event?"}
+  critical:
+    pivot:
+      - {weight: 4, text: "How could this event pivot the entire expedition objective?"}
+
+faction:
+  calm:
+    posture:
+      - {weight: 2, text: "What gesture shows this faction's preferred relationship?"}
+  uneasy:
+    demand:
+      - {weight: 2, text: "What small demand tests loyalty?"}
+  pressured:
+    betrayal:
+      - {weight: 3, text: "What action would this faction call betrayal right now?"}
+  dangerous:
+    leverage:
+      - {weight: 3, text: "What leverage do they hold over a critical path?"}
+  critical:
+    doctrine:
+      - {weight: 4, text: "What core doctrine will they never compromise on?"}
+
+clock:
+  calm:
+    signal:
+      - {weight: 2, text: "What early signal shows the clock is moving?"}
+  uneasy:
+    acceleration:
+      - {weight: 2, text: "What factor accelerates this clock unexpectedly?"}
+  pressured:
+    tradeoff:
+      - {weight: 3, text: "What tradeoff slows this clock but worsens another?"}
+  dangerous:
+    threshold:
+      - {weight: 3, text: "What threshold changes the rules when crossed?"}
+  critical:
+    fallout:
+      - {weight: 4, text: "What fallout lands immediately if this clock fills now?"}
