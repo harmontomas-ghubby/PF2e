@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Clocks</h1>
+<form method='post' action='/clocks/create'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><input name='name'/><input name='segments_total' value='4'/><button>Create</button></form>
+{% for c in clocks %}<article><h3>{{c.name}} {{c.segments_filled}}/{{c.segments_total}}</h3><form method='post' action='/clocks/tick'><input type='hidden' name='clock_id' value='{{c.id}}'/><button name='delta' value='1'>+1</button><button name='delta' value='-1'>-1</button></form></article>{% endfor %}
+{% endblock %}

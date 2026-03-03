@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}<h1>Oracles</h1><p>{{result}}</p>
+{% for c in categories %}<h3>{{c.category}}</h3><ul>{% for t in c.tables %}<li>
+<form method='post' action='/oracles/roll'><input type='hidden' name='category' value='{{c.category}}'/><input type='hidden' name='table' value='{{t.name}}'/><button>{{t.name}}</button></form>
+</li>{% endfor %}</ul>{% endfor %}
+{% endblock %}

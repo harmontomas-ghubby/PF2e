@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}<h1>Settings & Data Health</h1>
+<form method='post' action='/settings/save'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><label><input type='checkbox' name='auto_journal_rolls' {% if setting and setting.auto_journal_rolls %}checked{% endif %}/> auto journal rolls</label><input name='default_threat' value='{{setting.default_threat if setting else "Moderate"}}'/><button>Save</button></form>
+<form method='post' action='/settings/reload-data'><button>Reload YAML data</button></form>
+<ul>{% for e in data_errors %}<li>{{e}}</li>{% else %}<li>No data errors.</li>{% endfor %}</ul>
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}<h1>Exports</h1>
+<form method='post' action='/exports/json'><input name='campaign_id' value='1'/><button>Export JSON</button></form>
+<form method='post' action='/exports/markdown'><input name='campaign_id' value='1'/><button>Export Markdown</button></form>
+<form method='post' action='/exports/import' enctype='multipart/form-data'><input name='campaign_id' value='1'/><input type='file' name='file'/><button>Import JSON</button></form>
+{% endblock %}

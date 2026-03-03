@@ -1,0 +1,2 @@
+templates:
+  - {name: "Impending Raid", segments_total: 6, category: danger}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>{{ title or 'Solo Table' }}</title>
+  <link rel="stylesheet" href="/static/pico.min.css"/>
+  <link rel="stylesheet" href="/static/app.css"/>
+  <script src="/static/alpine.min.js" defer></script>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><strong>Solo Table</strong></li>
+    <li><a href="/">Dashboard</a></li><li><a href="/campaigns">Campaign</a></li><li><a href="/characters">Characters</a></li><li><a href="/scenes">Scene</a></li>
+    <li><a href="/oracles">Oracles</a></li><li><a href="/combat">Combat</a></li><li><a href="/locations">Locations/Map</a></li><li><a href="/factions">Factions</a></li>
+    <li><a href="/clocks">Clocks</a></li><li><a href="/loot">Loot</a></li><li><a href="/journal">Journal</a></li><li><a href="/exports">Exports</a></li><li><a href="/settings">Settings</a></li>
+  </ul>
+</nav>
+<header class="top-tools">
+<form action="/dice/roll" method="post"><input type="hidden" name="campaign_id" value="1"/><input id="dice-input" name="expression" placeholder="r: 1d20+5"/><button>Roll</button></form>
+<input id="global-search" placeholder="/ search" onkeydown="if(event.key==='Enter'){location='/search?q='+encodeURIComponent(this.value)}"/>
+</header>
+<main class="container">{% block content %}{% endblock %}</main>
+<script>
+document.addEventListener('keydown',(e)=>{if(e.key=='/'){e.preventDefault();document.getElementById('global-search').focus()}if(e.key=='r'){document.getElementById('dice-input').focus()}if(e.key=='j'){location='/journal'}if(e.key=='n'){location='/scenes'}})
+</script>
+</body>
+</html>

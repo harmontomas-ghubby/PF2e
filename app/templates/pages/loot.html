@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Loot</h1>
+<form method='post' action='/loot/generate'><input name='table' value='treasure'/><button>Generate</button></form>
+<p>{{result}}</p>
+{% endblock %}

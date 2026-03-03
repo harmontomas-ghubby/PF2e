@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Locations / Pinboard</h1>
+<form method='post' action='/locations/create'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><input name='name'/><input name='x' value='100'/><input name='y' value='100'/><button>Add Pin</button></form>
+<div class='pinboard'>{% for l in locations %}<div class='pin' style='left:{{l.x}}px; top:{{l.y}}px'>{{l.name}}</div>{% endfor %}</div>
+{% endblock %}

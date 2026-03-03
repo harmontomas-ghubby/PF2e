@@ -1,0 +1,3 @@
+{% extends 'base.html' %}{% block content %}<h1>Campaigns</h1>
+<form method='post' action='/campaigns/create'><input name='title' placeholder='Title'/><input name='seed' value='42'/><button>Create</button></form>
+<ul>{% for c in campaigns %}<li>{{ c.id }} - {{ c.title }} (seed {{ c.seed }})</li>{% endfor %}</ul>{% endblock %}
