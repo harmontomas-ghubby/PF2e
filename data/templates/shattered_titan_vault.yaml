@@ -1,0 +1,253 @@
+metadata:
+  id: "shattered_titan_vault"
+  name: "Shattered Titan Vault"
+  version: 1
+  description: "A buried divine engine megadungeon that escalates from malfunctioning containment to reality fracture."
+  recommended_levels: "5–18"
+  tags: ["megadungeon", "titan", "divine-engine", "runes"]
+
+defaults:
+  campaign:
+    tone_tags: ["mythic", "ancient", "unstable", "awe"]
+    safety_lines: ""
+    safety_veils: ""
+    tension_start: 3
+    seed: 12345
+
+zones:
+  - key: "rib_breach"
+    name: "Rib Breach"
+    depth: 1
+    theme_tags: ["titan", "entry", "ribs", "runes"]
+    danger_tags: ["constructs", "traps"]
+    notes: "Exposed ribcage entry with salvage scaffolding and warning sigils."
+  - key: "sternum_galleries"
+    name: "Sternum Galleries"
+    depth: 2
+    theme_tags: ["titan", "corridors", "protocol"]
+    danger_tags: ["constructs", "patrols"]
+    notes: "Grand halls where the Vaultbound still attempt procedural containment."
+  - key: "lung_engines"
+    name: "Lung Engines"
+    depth: 3
+    theme_tags: ["titan", "lungs", "elemental", "machinery"]
+    danger_tags: ["elemental-surges", "hazards"]
+    notes: "Elemental turbines and pressure chambers. Air tastes metallic."
+  - key: "veinworks"
+    name: "Veinworks"
+    depth: 4
+    theme_tags: ["titan", "veins", "rune-arteries", "navigation"]
+    danger_tags: ["rune-flares", "maze"]
+    notes: "Glowing arteries of runes; pathways reroute under stress."
+  - key: "choir_chapels"
+    name: "Choir Chapels"
+    depth: 5
+    theme_tags: ["titan", "divine", "choir", "corruption"]
+    danger_tags: ["outsiders", "reality-warp"]
+    notes: "Hymnal chambers where fracture-songs echo."
+  - key: "heart_reactor"
+    name: "Heart Reactor"
+    depth: 6
+    theme_tags: ["titan", "heart", "reactor", "apex"]
+    danger_tags: ["catastrophe", "time-slip"]
+    notes: "The pulsing core. Decisions here change the world."
+
+connections:
+  - from: "rib_breach"
+    to: "sternum_galleries"
+    type: "stairs"
+    is_one_way: false
+    notes: "Collapsed scaffolds lead down through ossified ribs."
+  - from: "sternum_galleries"
+    to: "lung_engines"
+    type: "route"
+    is_one_way: false
+    notes: "Maintenance corridors that hiss with pressure."
+  - from: "lung_engines"
+    to: "veinworks"
+    type: "route"
+    is_one_way: false
+    notes: "Arterial conduits lined with pulsing sigils."
+  - from: "veinworks"
+    to: "choir_chapels"
+    type: "secret"
+    is_one_way: false
+    notes: "A seam in the rune-wall opens when the right phrase is spoken."
+  - from: "choir_chapels"
+    to: "heart_reactor"
+    type: "portal"
+    is_one_way: false
+    notes: "A runic shunt that only stabilizes under specific conditions."
+
+factions:
+  - key: "vaultbound"
+    name: "The Vaultbound"
+    archetype: "Containment Wardens"
+    power: 4
+    attitude: -1
+    tags: ["constructs", "protocol", "order"]
+    goal: "Maintain containment; identify and purge system threats."
+    notes: "Not malicious—just inflexible."
+  - key: "fractured_choir"
+    name: "The Fractured Choir"
+    archetype: "Liberation Cult"
+    power: 5
+    attitude: -2
+    tags: ["outsiders", "corruption", "revelation"]
+    goal: "Unseal the Titan and rewrite the divine order."
+    notes: "Beautiful doctrine, catastrophic outcome."
+  - key: "deep_delvers"
+    name: "The Deep Delvers"
+    archetype: "Salvage Consortium"
+    power: 3
+    attitude: 1
+    tags: ["dwarves", "scholars", "salvage"]
+    goal: "Extract relics, map safe routes, survive."
+    notes: "Allies until interests conflict."
+
+clocks:
+  - key: "containment_stability"
+    name: "Containment Stability"
+    segments_total: 8
+    segments_filled: 2
+    category: "danger"
+    tags: ["vaultbound", "containment"]
+    notes: "When filled, containment fails in a major way."
+  - key: "awakening_hymn"
+    name: "Awakening Hymn"
+    segments_total: 10
+    segments_filled: 1
+    category: "mystery"
+    tags: ["choir", "awakening"]
+    notes: "When filled, the Titan becomes partially sentient."
+  - key: "delver_support"
+    name: "Delver Support"
+    segments_total: 6
+    segments_filled: 3
+    category: "opportunity"
+    tags: ["delvers", "safehouse"]
+    notes: "Measures how much aid/safety the Delvers can provide."
+
+beats:
+  - key: "beat_1_rib_breach"
+    title: "Find the Rib Breach entry and establish a safe approach."
+    description: "Secure a staging point; learn the first warnings."
+    zone: "rib_breach"
+    prerequisites: []
+  - key: "beat_2_containment_failing"
+    title: "Confirm containment is failing and identify the cause."
+    description: "Evidence points deeper; systems are degrading."
+    zone: "sternum_galleries"
+    prerequisites: ["beat_1_rib_breach"]
+  - key: "beat_3_engine_access"
+    title: "Reach the Lung Engines and diagnose the pressure surges."
+    description: "Stabilize or bypass the elemental turbines."
+    zone: "lung_engines"
+    prerequisites: ["beat_2_containment_failing"]
+  - key: "beat_4_choice_repair_or_break"
+    title: "Decide: repair containment or exploit the fracture."
+    description: "Both paths open different gates and consequences."
+    zone: "veinworks"
+    prerequisites: ["beat_3_engine_access"]
+  - key: "beat_5_confront_choir"
+    title: "Confront a Choir emissary and learn what they want."
+    description: "Negotiate, banish, or uncover their leverage."
+    zone: "choir_chapels"
+    prerequisites: ["beat_4_choice_repair_or_break"]
+  - key: "beat_6_enter_heart"
+    title: "Enter the Heart Reactor and face the core truth."
+    description: "The Titan’s purpose becomes undeniable."
+    zone: "heart_reactor"
+    prerequisites: ["beat_5_confront_choir"]
+  - key: "beat_7_final_decision"
+    title: "Choose the Titan’s fate."
+    description: "Seal, rewrite, destroy, or rebind at great cost."
+    zone: "heart_reactor"
+    prerequisites: ["beat_6_enter_heart"]
+
+gates:
+  - key: "gate_rune_artery_seal"
+    zone: "sternum_galleries"
+    name: "Rune-Sealed Artery"
+    gate_type: "key"
+    requirement_text: "A matching sigil sequence must be assembled to open the artery."
+    signals:
+      - "The wall-sigils pulse in a repeating triplet, like a lock waiting for three notes."
+      - "A broken tablet depicts the artery opening when ‘the sequence is whole.’"
+    bypass_options:
+      - "Force the seal (risk destabilizing local containment)."
+      - "Reroute through a maintenance seam (slower, more exposure)."
+    status: "locked"
+  - key: "gate_engine_pressure_lock"
+    zone: "lung_engines"
+    name: "Engine Pressure Lock"
+    gate_type: "hazard"
+    requirement_text: "Pressure must be stabilized before the turbine corridor becomes passable."
+    signals:
+      - "A gauge rune flashes: OVERPRESSURE. The corridor exhales razor wind."
+    bypass_options:
+      - "Cross during a lull (dangerous timing)."
+      - "Shunt pressure elsewhere (affects another zone)."
+    status: "locked"
+  - key: "gate_choir_ward"
+    zone: "choir_chapels"
+    name: "Choir Ward"
+    gate_type: "faction"
+    requirement_text: "The ward yields only to a pure tone or a broken vow."
+    signals:
+      - "Your voice echoes back wrong, harmonized by something listening."
+      - "The ward’s runes resemble a hymn line with notes missing."
+    bypass_options:
+      - "Parley with a Choir emissary."
+      - "Deface the hymn (invites retaliation)."
+    status: "locked"
+
+discoverables:
+  - key: "disc_rib_scorch_marks"
+    zone: "rib_breach"
+    category: "architecture"
+    prompt: "Scorch marks run along the inside of the ribs—something once tried to break outward."
+    implication: "The prison was tested from within."
+    truth: "The Titan contains a fragment that periodically surges against its bonds."
+    status: "seeded"
+    tags: ["foreshadow", "containment"]
+  - key: "disc_protocol_prayers"
+    zone: "sternum_galleries"
+    category: "signage"
+    prompt: "A brass plaque lists containment protocols like prayers."
+    implication: "Order here is ritualized—failure is expected."
+    truth: "The Vaultbound treat procedures as sacred code."
+    status: "seeded"
+    tags: ["vaultbound", "protocol"]
+  - key: "disc_lung_whistle"
+    zone: "lung_engines"
+    category: "trace"
+    prompt: "A high whistle passes through vents in a pattern—almost like a warning."
+    implication: "The engines are communicating distress."
+    truth: "Pressure cycles are accelerating toward a dangerous rhythm."
+    status: "seeded"
+    tags: ["elemental", "warning"]
+  - key: "disc_vein_reroute"
+    zone: "veinworks"
+    category: "architecture"
+    prompt: "Runic arteries subtly rearrange when you look away."
+    implication: "The dungeon shifts under stress."
+    truth: "Containment logic reroutes pathways to isolate ‘threats.’"
+    status: "seeded"
+    tags: ["maze", "runes"]
+  - key: "disc_choir_echo"
+    zone: "choir_chapels"
+    category: "ritual-trace"
+    prompt: "Your footsteps pick up a second rhythm, as if someone is walking just behind you."
+    implication: "Something here mirrors intruders."
+    truth: "The Choir’s presence creates sympathetic reflections."
+    status: "seeded"
+    tags: ["choir", "corruption"]
+  - key: "disc_heart_pulse"
+    zone: "heart_reactor"
+    category: "remains"
+    prompt: "Each distant pulse nudges dust into geometric sigils."
+    implication: "The Titan is active—barely restrained."
+    truth: "The heart is a divine reactor stabilizing a bound catastrophe."
+    status: "seeded"
+    tags: ["apex", "awakening"]

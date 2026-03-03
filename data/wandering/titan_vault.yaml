@@ -1,0 +1,158 @@
+tables:
+  by_zone_tag:
+    ribs:
+      calm:
+        - weight: 3
+          type: patrol
+          prompt: Vaultbound sentries inspect fractures with rune lanterns.
+          follow_up_question: What sign tells you they already know intruders are near?
+          suggested_tension_delta: 0
+          tags: [vaultbound, patrol]
+        - weight: 2
+          type: omen
+          prompt: Hairline runes glow and fade like breathing.
+          follow_up_question: ""
+          suggested_tension_delta: 0
+          tags: [runes, omen]
+        - weight: 2
+          type: discovery
+          prompt: Deep Delver chalk marks point toward a temporary safe rope line.
+          follow_up_question: Why did the Delvers abandon this route?
+          suggested_tension_delta: 0
+          tags: [delvers, route]
+        - weight: 1
+          type: environmental_change
+          prompt: Gravity slips sideways for a heartbeat and then returns.
+          follow_up_question: What fragile item nearly shatters?
+          suggested_tension_delta: 1
+          tags: [gravity, instability]
+        - weight: 1
+          type: hazard
+          prompt: Bone dust ignites from static rune discharge.
+          follow_up_question: Who is cut off by the flare?
+          suggested_tension_delta: 1
+          tags: [hazard, surge]
+        - weight: 1
+          type: faction_sign
+          prompt: A Choir glyph is scratched over a containment warning.
+          follow_up_question: What promise does the glyph make?
+          suggested_tension_delta: 1
+          tags: [choir, sign]
+      pressured:
+        - weight: 2
+          type: patrol
+          prompt: A reinforced Vaultbound squad seals side passages behind you.
+          follow_up_question: What shortcut did they just deny?
+          suggested_tension_delta: 1
+          tags: [vaultbound, lockdown]
+        - weight: 2
+          type: hazard
+          prompt: Rune lock-down shutters slam in sequence.
+          follow_up_question: Which ally is nearly separated?
+          suggested_tension_delta: 1
+          tags: [runes, lockdown]
+        - weight: 1
+          type: encounter
+          prompt: Panicked scavengers sprint from below, chased by sparks and chanting.
+          follow_up_question: What do they beg you to do?
+          suggested_tension_delta: 2
+          tags: [delvers, chaos]
+        - weight: 1
+          type: omen
+          prompt: Choral echoes overlap your voices with wrong harmonies.
+          follow_up_question: ""
+          suggested_tension_delta: 1
+          tags: [choir, echo]
+        - weight: 1
+          type: discovery
+          prompt: A severed conduit reveals a hand-written pressure map.
+          follow_up_question: Which chamber is marked "do not vent"?
+          suggested_tension_delta: 0
+          tags: [map, pressure]
+        - weight: 1
+          type: environmental_change
+          prompt: The rib tunnel tilts as a containment brace retracts.
+          follow_up_question: What route becomes newly accessible?
+          suggested_tension_delta: 1
+          tags: [shift, topology]
+      critical:
+        - weight: 2
+          type: encounter
+          prompt: A Vaultbound purge unit declares all lifeforms contamination vectors.
+          follow_up_question: What might prove you're not the primary threat?
+          suggested_tension_delta: 2
+          tags: [vaultbound, purge]
+        - weight: 1
+          type: hazard
+          prompt: A pressure shockwave ripples through rib chambers, hurling debris.
+          follow_up_question: Who is pinned in the blast path?
+          suggested_tension_delta: 2
+          tags: [pressure, debris]
+        - weight: 1
+          type: environmental_change
+          prompt: Gravity inverts for three breaths.
+          follow_up_question: What now hangs over a deadly drop?
+          suggested_tension_delta: 2
+          tags: [gravity, critical]
+        - weight: 1
+          type: faction_sign
+          prompt: Choir voices chant from inside the walls.
+          follow_up_question: What phrase repeats as a threat?
+          suggested_tension_delta: 1
+          tags: [choir, omen]
+        - weight: 1
+          type: patrol
+          prompt: Delvers with improvised wards escort wounded civilians toward the exit.
+          follow_up_question: What aid do they demand before moving on?
+          suggested_tension_delta: 0
+          tags: [delvers, aid]
+        - weight: 1
+          type: discovery
+          prompt: A cracked observation lens shows the Heart pulsing faster than before.
+          follow_up_question: ""
+          suggested_tension_delta: 1
+          tags: [heart, foreshadow]
+    lungs:
+      calm:
+        - {weight: 2, type: environmental_change, prompt: Turbine rhythm settles into a deceptive lull., follow_up_question: What clue says the lull is temporary?, suggested_tension_delta: 0, tags: [engines, lull]}
+        - {weight: 2, type: patrol, prompt: Vaultbound technicians recalibrate vent runes and ignore you unless provoked., follow_up_question: "", suggested_tension_delta: 0, tags: [vaultbound, technicians]}
+        - {weight: 1, type: omen, prompt: Condensation forms sigils that resemble warning runes., follow_up_question: "", suggested_tension_delta: 0, tags: [omen, runes]}
+        - {weight: 1, type: hazard, prompt: A minor steam burst scalds exposed skin., follow_up_question: Who loses grip at the wrong time?, suggested_tension_delta: 1, tags: [steam, hazard]}
+        - {weight: 1, type: discovery, prompt: A maintenance slate describes emergency vent routes., follow_up_question: Which route has been crossed out repeatedly?, suggested_tension_delta: 0, tags: [routes, lore]}
+        - {weight: 1, type: faction_sign, prompt: Delver supply crates are hidden behind a valve wall., follow_up_question: What payment note is tucked inside?, suggested_tension_delta: 0, tags: [delvers, supplies]}
+      pressured:
+        - {weight: 2, type: hazard, prompt: Overpressure alarms trigger and razor wind tears through grates., follow_up_question: What cover can barely hold?, suggested_tension_delta: 1, tags: [pressure, wind]}
+        - {weight: 1, type: encounter, prompt: An elemental leak births unstable sparks that chase movement., follow_up_question: What tactic calms it without destroying machinery?, suggested_tension_delta: 2, tags: [elemental, encounter]}
+        - {weight: 1, type: patrol, prompt: Vaultbound reroute flow and accuse nearby crews of sabotage., follow_up_question: Who do they suspect first?, suggested_tension_delta: 1, tags: [vaultbound, blame]}
+        - {weight: 1, type: environmental_change, prompt: The corridor breathes inward, pulling loose gear toward fans., follow_up_question: What irreplaceable item starts sliding away?, suggested_tension_delta: 1, tags: [suction, danger]}
+        - {weight: 1, type: discovery, prompt: A pressure chart predicts a catastrophic spike in one hour., follow_up_question: Which zone is marked as blast sink?, suggested_tension_delta: 0, tags: [chart, forecast]}
+        - {weight: 1, type: faction_sign, prompt: Choir graffiti marks a valve as "the first note.", follow_up_question: What happens if it is opened now?, suggested_tension_delta: 1, tags: [choir, sabotage]}
+      critical:
+        - {weight: 2, type: hazard, prompt: A turbine ruptures and sends shrapnel through the catwalk network., follow_up_question: Who is now stranded on a failing platform?, suggested_tension_delta: 2, tags: [rupture, shrapnel]}
+        - {weight: 1, type: encounter, prompt: Choir zealots attempt to force-open a pressure gate mid-surge., follow_up_question: What do they claim the surge will reveal?, suggested_tension_delta: 2, tags: [choir, gate]}
+        - {weight: 1, type: patrol, prompt: Vaultbound lockdown drones seal exits with hard-light barriers., follow_up_question: Which route remains unsealed and why?, suggested_tension_delta: 1, tags: [lockdown, drones]}
+        - {weight: 1, type: omen, prompt: The engine roar syncs with a distant heartbeat., follow_up_question: "", suggested_tension_delta: 1, tags: [heart, omen]}
+        - {weight: 1, type: environmental_change, prompt: Gravity flickers and everyone drifts toward an exposed shaft., follow_up_question: What anchor point can save the group?, suggested_tension_delta: 2, tags: [gravity, shaft]}
+        - {weight: 1, type: discovery, prompt: A dead Delver clutches a stabilizer key with a warning etched on it., follow_up_question: What cost does the warning imply?, suggested_tension_delta: 1, tags: [delvers, key]}
+    heart:
+      calm:
+        - {weight: 2, type: omen, prompt: The Heart pulse arrives like distant thunder behind the walls., follow_up_question: "", suggested_tension_delta: 0, tags: [heart, pulse]}
+        - {weight: 1, type: discovery, prompt: A quiet shrine records names of previous sealing teams., follow_up_question: Which name matches someone still alive?, suggested_tension_delta: 0, tags: [history, shrine]}
+        - {weight: 1, type: patrol, prompt: Vaultbound honor guards bow before passing the reactor threshold., follow_up_question: What ritual do they expect you to mimic?, suggested_tension_delta: 0, tags: [vaultbound, ritual]}
+        - {weight: 1, type: faction_sign, prompt: Choir candles burn with colorless flame along a balcony., follow_up_question: What message appears in their smoke?, suggested_tension_delta: 1, tags: [choir, sign]}
+        - {weight: 1, type: environmental_change, prompt: Time slips and a prior conversation repeats for a second., follow_up_question: What detail changed this time?, suggested_tension_delta: 1, tags: [time-slip, anomaly]}
+        - {weight: 1, type: hazard, prompt: A protective ward arcs lightning between pylons without warning., follow_up_question: Which path is suddenly electrified?, suggested_tension_delta: 1, tags: [ward, lightning]}
+      pressured:
+        - {weight: 2, type: encounter, prompt: A fractured avatar of the bound Titan manifests and demands intent., follow_up_question: What answer might calm it?, suggested_tension_delta: 2, tags: [avatar, encounter]}
+        - {weight: 1, type: hazard, prompt: Reactor conduits vent radiant heat in rotating sweeps., follow_up_question: What timing pattern keeps you alive?, suggested_tension_delta: 1, tags: [heat, pattern]}
+        - {weight: 1, type: patrol, prompt: Vaultbound elites attempt to quarantine the chamber and everyone in it., follow_up_question: Who do they classify as essential personnel?, suggested_tension_delta: 1, tags: [vaultbound, quarantine]}
+        - {weight: 1, type: faction_sign, prompt: Delver banners are nailed near an emergency retreat tunnel., follow_up_question: What promise did they leave for allies?, suggested_tension_delta: 0, tags: [delvers, retreat]}
+        - {weight: 1, type: environmental_change, prompt: The floor sigils rotate and rewrite the chamber geometry., follow_up_question: What objective is now cut off?, suggested_tension_delta: 1, tags: [geometry, runes]}
+        - {weight: 1, type: discovery, prompt: A stabilizer log proves someone already chose to break one seal., follow_up_question: Which faction benefits if that truth spreads?, suggested_tension_delta: 1, tags: [log, revelation]}
+      critical:
+        - {weight: 2, type: environmental_change, prompt: Reality fractures open above the reactor, showing impossible skies., follow_up_question: What falls through from beyond?, suggested_tension_delta: 2, tags: [fracture, reality]}
+        - {weight: 1, type: encounter, prompt: Choir leaders and Vaultbound commanders clash in open combat at the core controls., follow_up_question: What third option can stop both sides?, suggested_tension_delta: 2, tags: [faction, clash]}
+        - {weight: 1, type: hazard, prompt: Heart pulses trigger lethal resonance in unsecured metal., follow_up_question: Who is trapped by their own gear?, suggested_tension_delta: 2, tags: [resonance, hazard]}
+        - {weight: 1, type: patrol, prompt: A last-resort Vaultbound sentinel initiates total lockdown countdown., follow_up_question: What code phrase might abort it?, suggested_tension_delta: 2, tags: [countdown, lockdown]}
+        - {weight: 1, type: omen, prompt: Every reflection shows the chamber as already destroyed., follow_up_question: "", suggested_tension_delta: 1, tags: [prophecy, omen]}
+        - {weight: 1, type: discovery, prompt: A core tablet offers one irreversible command to the first hand that touches it., follow_up_question: What cost is carved beside the command?, suggested_tension_delta: 1, tags: [choice, finale]}

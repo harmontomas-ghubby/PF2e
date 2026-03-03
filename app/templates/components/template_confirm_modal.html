@@ -1,0 +1,11 @@
+<div class="modal">
+  <h3>Apply Template: Shattered Titan Vault</h3>
+  <p>This will create zones, gates, beats, factions, clocks, and starter discoverables. Continue?</p>
+  <div class="actions">
+    <button
+      hx-post="/campaigns/{{ campaign_id }}/templates/shattered-titan-vault/apply"
+      hx-target="body"
+      hx-swap="none">Confirm</button>
+    <button type="button" hx-on:click="this.closest('.modal').remove()">Cancel</button>
+  </div>
+</div>

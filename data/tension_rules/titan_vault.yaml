@@ -1,0 +1,9 @@
+suggested_deltas:
+  expedition_advance_day: 1
+  wandering_event:
+    encounter: 2
+  gate_bypass_force: 1
+  gate_unlock_safely: -1
+  repair_stabilizer: -1
+  long_rest_in_dungeon: 1
+  return_to_safety: -2

@@ -1,0 +1,15 @@
+<section class="campaign-templates">
+  <h2>Templates</h2>
+  {% if template_already_applied or has_content %}
+    <p>Template already applied.</p>
+    <button disabled>Apply Template: Shattered Titan Vault</button>
+  {% else %}
+    <button
+      hx-get="/campaigns/{{ campaign.id }}/templates/shattered-titan-vault/confirm"
+      hx-target="#modal-root"
+      hx-swap="innerHTML">
+      Apply Template: Shattered Titan Vault
+    </button>
+  {% endif %}
+</section>
+<div id="modal-root"></div>
