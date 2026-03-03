@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Factions</h1>
+<form method='post' action='/factions/create'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><input name='name'/><input name='archetype'/><button>Create</button></form>
+{% for f in factions %}<article><h3>{{f.name}}</h3><p>{{f.archetype}}</p><form method='post' action='/factions/advance'><input type='hidden' name='faction_id' value='{{f.id}}'/><button>Advance faction turn</button></form></article>{% endfor %}
+{% endblock %}

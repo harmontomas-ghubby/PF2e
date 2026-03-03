@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Characters</h1>
+<form method='post' action='/characters/create'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><input name='name' placeholder='Name'/><input name='level' value='1'/><button>Add</button></form>
+<table><tr><th>Name</th><th>Level</th><th>HP</th></tr>{% for c in characters %}<tr><td>{{c.name}}</td><td>{{c.level}}</td><td>{{c.current_hp}}/{{c.max_hp}}</td></tr>{% endfor %}</table>
+{% endblock %}

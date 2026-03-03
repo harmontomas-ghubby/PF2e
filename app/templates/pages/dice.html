@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Dice</h1>
+<form method='post' action='/dice/roll'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><input name='expression' placeholder='4d6kh3 + 2'/><button>Roll</button></form>
+<ul>{% for h in history %}<li>{{h.expression}} = {{h.total}} ({{h.breakdown}})</li>{% endfor %}</ul>
+{% endblock %}

@@ -1,0 +1,28 @@
+- category: scene
+  tables:
+    - name: objective
+      entries:
+        - {text: "Secure an uneasy alliance", weight: 2}
+        - {text: "Reach the hidden waypoint", weight: 1}
+    - name: complication
+      entries:
+        - {text: "A trusted contact goes missing", weight: 1}
+        - {text: "Time pressure closes options", weight: 2}
+    - name: twist
+      entries:
+        - {text: "An ally is tied to the threat", weight: 1}
+        - {text: "The objective was bait", weight: 1}
+    - name: stakes
+      entries:
+        - {text: "A district could fall into chaos", weight: 1}
+        - {text: "A rival gains leverage", weight: 1}
+    - name: sensory
+      entries:
+        - {text: "Cold rain and distant bells", weight: 1}
+        - {text: "Dust, ozone, and static whispers", weight: 1}
+- category: faction
+  tables:
+    - name: moves
+      entries:
+        - {text: "Launches a covert probe into {settlement}", weight: 1}
+        - {text: "Offers a risky pact to {npc_name}", weight: 1}

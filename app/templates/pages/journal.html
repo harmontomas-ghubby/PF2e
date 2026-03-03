@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}<h1>Journal</h1>
+<form><input name='q' value='{{q}}' placeholder='search'/><button>Search</button></form>
+<form method='post' action='/journal/create'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><input name='title' placeholder='Title'/><input name='tags' placeholder='tags'/><textarea name='body'></textarea><button>Save</button></form>
+{% for e in entries %}<article><h3>{{e.title}}</h3><small>{{e.tags}}</small><p>{{e.body}}</p></article>{% endfor %}
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Encounter Outlines</h1>
+<form method='post' action='/encounters/generate'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><input name='level' value='1'/><input name='threat' value='Moderate'/><input name='environment' value='wilderness'/><input name='scene_type' value='exploration'/><button>Generate</button></form>
+{% for e in encounters %}<article><h3>{{e.threat_label}}</h3><pre>{{e.outline}}</pre></article>{% endfor %}
+{% endblock %}

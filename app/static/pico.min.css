@@ -1,0 +1,2 @@
+/* Minimal local CSS placeholder; replace with full vendored Pico if desired */
+:root{font-family:system-ui,sans-serif}body{margin:0}nav ul{display:flex;gap:.5rem;flex-wrap:wrap;list-style:none;padding:.5rem 1rem;margin:0;background:#111;color:#fff}nav a{color:#9ed0ff;text-decoration:none}.container{padding:1rem}input,textarea,select,button{margin:.2rem;padding:.4rem}article{border:1px solid #ddd;padding:.5rem;margin:.5rem 0}

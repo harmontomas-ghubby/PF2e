@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% block content %}<h1>Combat</h1>
+<form method='post' action='/combat/start'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><button>Start Combat</button></form>
+{% if active %}<p>Round {{active.round}}</p>
+<form method='post' action='/combat/add'><input type='hidden' name='combat_session_id' value='{{active.id}}'/><input name='name'/><input name='initiative' value='10'/><select name='side'><option>PC</option><option>NPC</option></select><button>Add Combatant</button></form>
+<form method='post' action='/combat/next'><input type='hidden' name='combat_session_id' value='{{active.id}}'/><button>Next Turn</button></form>
+<form method='post' action='/combat/end'><input type='hidden' name='combat_session_id' value='{{active.id}}'/><textarea name='outcome'></textarea><button>End Combat</button></form>
+<ul>{% for c in combatants %}<li>{{c.name}} init {{c.initiative}} {% if c.is_active_turn %}<strong>(active)</strong>{% endif %}</li>{% endfor %}</ul>
+{% endif %}
+{% endblock %}

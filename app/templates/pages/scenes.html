@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}<h1>Scenes</h1>
+<form method='post' action='/scenes/generate'><input type='hidden' name='campaign_id' value='{{campaign_id}}'/><input name='title' placeholder='Scene title'/><select name='scene_type'><option>travel</option><option>social</option><option>exploration</option><option>combat</option><option>mystery</option></select><button>Generate</button></form>
+{% for s in scenes %}<article><h3>{{s.title}}</h3><p>{{s.objective}} | {{s.complication}} | {{s.twist}}</p></article>{% endfor %}
+{% endblock %}

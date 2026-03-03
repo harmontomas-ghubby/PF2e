@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block content %}
+<h1>Dashboard</h1>
+<p>In-game time: {{ campaign.in_game_datetime if campaign else 'n/a' }}</p>
+<p>Open clocks: {{ open_clocks }}</p>
+<p>Recent actions:</p><ul>{% for e in timeline %}<li>{{ e.created_at }} - {{ e.title or e.body[:40] }}</li>{% endfor %}</ul>
+{% endblock %}
