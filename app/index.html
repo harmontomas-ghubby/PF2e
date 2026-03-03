@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PF2e Companion</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>PF2e Companion</h1>
+      <p class="subtitle">Offline-friendly game helper (no Python required)</p>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Session Notes</h2>
+        <textarea id="notes" placeholder="Write your session notes..."></textarea>
+        <div class="row right"><button id="clear-notes" class="danger">Clear Notes</button></div>
+      </section>
+
+      <section class="card">
+        <h2>Encounter XP Helper</h2>
+        <p>Enter enemy levels (comma separated) relative to party level.</p>
+        <div class="row">
+          <label for="party-level">Party level</label>
+          <input id="party-level" type="number" min="1" max="20" value="1" />
+        </div>
+        <div class="row">
+          <label for="enemy-levels">Enemy levels</label>
+          <input id="enemy-levels" type="text" placeholder="e.g. 1,2,3" />
+        </div>
+        <div class="row right"><button id="calc-xp">Calculate XP</button></div>
+        <p id="xp-result" class="result">XP Total: 0</p>
+      </section>
+
+      <section class="card">
+        <h2>Loot Tracker</h2>
+        <div class="row">
+          <input id="loot-input" type="text" placeholder="Add loot item..." />
+          <button id="add-loot">Add</button>
+        </div>
+        <ul id="loot-list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Party Checklist</h2>
+        <div class="row checkbox-row"><input type="checkbox" id="chk-healing" /><label for="chk-healing">Healing potions packed</label></div>
+        <div class="row checkbox-row"><input type="checkbox" id="chk-spells" /><label for="chk-spells">Daily spells prepared</label></div>
+        <div class="row checkbox-row"><input type="checkbox" id="chk-funds" /><label for="chk-funds">Party funds updated</label></div>
+        <div class="row checkbox-row"><input type="checkbox" id="chk-map" /><label for="chk-map">Map and initiative ready</label></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Data is saved in your browser on this computer.</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
