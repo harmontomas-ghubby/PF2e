@@ -1,0 +1,25 @@
+openapi: 3.1.0
+info:
+  title: PF2e API (Draft)
+  version: 0.1.0
+  description: |
+    Draft API contract for PF2e services.
+servers:
+  - url: http://localhost:8000
+paths:
+  /health:
+    get:
+      summary: Health check
+      operationId: getHealth
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                required: [status]
